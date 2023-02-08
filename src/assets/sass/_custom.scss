@@ -1,0 +1,110 @@
+:root {
+    --light-purple: #eef2ff;
+    --purple: #a5b4fc;
+    --dark-purple: #4f46e5;
+    --darker-purple: #3730a3;
+}
+  
+  //Generic
+  
+body {
+    background-color: var(--light-purple);
+    font-family: -apple-system, sans-serif;
+    margin: 0;
+}
+  
+.feather {
+    color: var(--light-purple);
+    stroke-width: 2.5;
+    width: 26px;
+    height: 26px;
+}
+  
+.title__container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin-left: 24px;
+    margin-bottom: 24px;
+}
+  
+.made,
+.title {
+    color: var(--purple);
+}
+  
+.title {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+  
+.hamburger-menu__container,
+.nav__item {
+    --size: 60px;
+    background-color: var(--dark-purple);
+    width: var(--size);
+    height: var(--size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s ease-in;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: var(--darker-purple);
+    }
+}
+  .nav__item {
+    top: 0;
+    position: absolute;
+    z-index: -1;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+
+  
+    &:hover .nav__item-text {
+      left: 120%;
+      opacity: 1;
+    }
+  }
+  
+  .nav__item-icon {
+    color: var(--light-purple);
+    width: 24px;
+    height: 24px;
+  }
+  .nav--open .nav__item:first-child {
+    top: 60px;
+    transition-duration: 0.1s;
+    z-index: 200;
+  }
+  
+  .nav--open .nav__item:nth-child(2) {
+    top: calc(60px * 2);
+    transition-duration: 0.1s;
+    z-index: 201;
+  }
+  
+  .nav--open .nav__item:nth-child(3) {
+    top: calc(60px * 3);
+    transition-duration: 0.1s;
+    z-index: 202;
+  }
+  
+  .nav--open .nav__item:last-child {
+    top: calc(60px * 4);
+    transition-duration: 0.1s;
+    z-index: 204;
+  }
+  
+  .nav__item-text {
+    color: var(--dark-purple);
+    position: absolute;
+    font-weight: 600;
+    left: 105%;
+    opacity: 0;
+    font-size: 18px;
+    white-space: nowrap;
+    transition: all 0.15s ease-in-out;
+  }
+  
